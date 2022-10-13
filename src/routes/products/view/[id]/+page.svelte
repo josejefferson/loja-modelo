@@ -81,7 +81,6 @@
 
     <p class="fs-4">
       {#if product.oldprice}
-        %>
         <s class="d-block fs-6 text-secondary">
           <small>{money(product.oldprice)}</small>
         </s>
