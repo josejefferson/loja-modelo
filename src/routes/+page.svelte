@@ -1,5 +1,6 @@
 <script lang="ts">
   import api from '../lib/api'
+  import Navbar from '../components/Navbar.svelte'
   import Product from '../components/Product.svelte'
   import ProductPlaceholder from '../components/ProductPlaceholder.svelte'
 
@@ -10,6 +11,8 @@
 
   fetchData()
 </script>
+
+<Navbar />
 
 <div class="bg-light py-5 mb-5">
   <div class="container">
@@ -40,6 +43,7 @@
       <div class="container">
         <h1 class="display-6">Ocorreu um erro!</h1>
         <p>Desculpe-nos! Ocorreu um erro ao carregar os produtos, por favor, tente novamente.</p>
+        <p>{err.message || ''}</p>
         <!-- svelte-ignore a11y-click-events-have-key-events -->
         <div class="btn btn-outline-danger" on:click={fetchData}>Tentar novamente</div>
       </div>
